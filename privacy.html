@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AutoReview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14171c;
+    --bg-raised:#1b1f26;
+    --bg-panel:#20242c;
+    --line:#2b3038;
+    --text:#e7eaee;
+    --text-dim:#98a1ad;
+    --text-faint:#5f6873;
+    --accent:#5b9dff;
+    --accent-dim:#3d6bb0;
+    --accent-glow:rgba(91,157,255,0.35);
+    --ok:#4fd1a5;
+    --warn:#e3b341;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 15% -10%, rgba(91,157,255,0.10), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(91,157,255,0.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 24px 96px;
+  }
+
+  /* ---------- Header / hero ---------- */
+  header{
+    padding:72px 0 48px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:56px;
+  }
+
+  .badge-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:32px;
+  }
+
+  .logo-badge{
+    position:relative;
+    width:64px;
+    height:64px;
+    border-radius:18px;
+    background:linear-gradient(155deg, #223049, #182029 60%);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .logo-badge::after{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:19px;
+    padding:1px;
+    background:linear-gradient(155deg, var(--accent-glow), transparent 60%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events:none;
+    animation:pulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse{
+    0%,100%{ opacity:0.5; }
+    50%{ opacity:1; }
+  }
+
+  .logo-badge svg{
+    width:34px;
+    height:34px;
+    fill:var(--accent);
+  }
+
+  .title-block .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 6px;
+  }
+
+  .title-block h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(28px, 4vw, 38px);
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+    color:#f4f6f9;
+  }
+
+  header p.lede{
+    font-size:16.5px;
+    color:var(--text-dim);
+    max-width:64ch;
+    margin:0 0 20px;
+  }
+
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .pill{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:100px;
+  }
+
+  .pill.ok{ color:var(--ok); border-color:rgba(79,209,165,0.35); }
+
+  /* ---------- Layout: nav + content ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  nav.toc{
+    position:sticky;
+    top:32px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+
+  nav.toc a{
+    font-size:13.5px;
+    color:var(--text-faint);
+    text-decoration:none;
+    padding:7px 0 7px 14px;
+    border-left:2px solid var(--line);
+    transition:color .15s, border-color .15s;
+  }
+
+  nav.toc a:hover, nav.toc a:focus-visible{
+    color:var(--text);
+    border-left-color:var(--accent);
+  }
+
+  main{ min-width:0; }
+
+  section{
+    margin-bottom:52px;
+    scroll-margin-top:28px;
+  }
+
+  section h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:21px;
+    font-weight:600;
+    color:#f4f6f9;
+    margin:0 0 4px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+
+  section h2 .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--text-faint);
+    font-weight:400;
+  }
+
+  section p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:14px 0;
+  }
+
+  section p strong{ color:var(--text); }
+
+  section ul{
+    margin:14px 0;
+    padding-left:0;
+    list-style:none;
+  }
+
+  section ul li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:10px;
+    color:var(--text-dim);
+    font-size:15.5px;
+  }
+
+  section ul li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--text-faint);
+  }
+
+  /* ---------- Signature element: mock accessibility settings row ---------- */
+  .settings-mock{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:4px;
+    margin:22px 0 8px;
+    overflow:hidden;
+  }
+
+  .settings-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 14px;
+  }
+
+  .settings-row .icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:linear-gradient(155deg, #223049, #182029);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .settings-row .icon svg{ width:20px; height:20px; fill:var(--accent); }
+
+  .settings-row .label{ flex:1; min-width:0; }
+
+  .settings-row .label .name{
+    font-size:14.5px;
+    color:var(--text);
+    font-weight:500;
+  }
+
+  .settings-row .label .desc{
+    font-size:12.5px;
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+    margin-top:2px;
+  }
+
+  .toggle{
+    width:44px;
+    height:26px;
+    border-radius:100px;
+    background:var(--accent);
+    position:relative;
+    flex-shrink:0;
+  }
+
+  .toggle::after{
+    content:"";
+    position:absolute;
+    top:3px;
+    right:3px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#0d1015;
+  }
+
+  .settings-mock .divider{ height:1px; background:var(--line); margin:0 14px; }
+
+  .settings-note{
+    font-size:12.5px;
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+    padding:12px 14px 8px;
+  }
+
+  /* ---------- Permission table ---------- */
+  .perm-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    font-size:14.5px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+  }
+
+  .perm-table thead th{
+    text-align:left;
+    background:var(--bg-panel);
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+    font-weight:400;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .perm-table tbody td{
+    padding:14px 16px;
+    color:var(--text-dim);
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+
+  .perm-table tbody tr:last-child td{ border-bottom:none; }
+
+  .perm-table tbody td:first-child{
+    color:var(--text);
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  /* ---------- Callout ---------- */
+  .callout{
+    background:rgba(79,209,165,0.06);
+    border:1px solid rgba(79,209,165,0.25);
+    border-radius:12px;
+    padding:16px 18px;
+    margin:20px 0;
+    display:flex;
+    gap:12px;
+  }
+
+  .callout .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--ok);
+    margin-top:7px;
+    flex-shrink:0;
+  }
+
+  .callout p{ margin:0; color:var(--text); font-size:14.5px; }
+  .callout p strong{ color:var(--ok); }
+
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:64px;
+    padding-top:28px;
+    color:var(--text-faint);
+    font-size:13px;
+    font-family:'JetBrains Mono', monospace;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  footer a{ color:var(--accent); text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width: 760px){
+    .layout{ grid-template-columns:1fr; }
+    nav.toc{
+      position:static;
+      flex-direction:row;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    nav.toc a{ border-left:none; border-bottom:2px solid var(--line); padding:6px 2px; }
+    header{ padding:48px 0 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="badge-row">
+      <div class="logo-badge">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20,9V7c0,-1.1 -0.9,-2 -2,-2h-3c0,-1.66 -1.34,-3 -3,-3S9,3.34 9,5H6C4.9,5 4,5.9 4,7v2c-1.66,0 -3,1.34 -3,3v4c0,1.66 1.34,3 3,3v4c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2v-4c1.66,0 3,-1.34 3,-3v-4C23,10.34 21.66,9 20,9zM7.5,11.5C7.5,10.67 8.17,10 9,10s1.5,0.67 1.5,1.5S9.83,13 9,13S7.5,12.33 7.5,11.5zM16.5,11.5c0,-0.83 -0.67,-1.5 -1.5,-1.5s-1.5,0.67 -1.5,1.5s0.67,1.5 1.5,1.5S16.5,12.33 16.5,11.5zM16,17H8v-2h8V17z"/>
+        </svg>
+      </div>
+      <div class="title-block">
+        <p class="eyebrow">Legal / Data Handling</p>
+        <h1>Privacy Policy</h1>
+      </div>
+    </div>
+    <p class="lede">AutoReview automates repetitive on-screen questions — star ratings, Yes/No prompts — using Android's Accessibility Service. This page explains exactly why that permission is needed, what the service does, and what happens (and doesn't happen) to your data.</p>
+    <div class="meta-row">
+      <span class="pill">Last updated · July 2026</span>
+      <span class="pill ok">● No data leaves your device</span>
+      <span class="pill">v1.0</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc">
+      <a href="#why">Why the permission</a>
+      <a href="#what-it-does">What it does</a>
+      <a href="#data">Data collected</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#sharing">Data sharing</a>
+      <a href="#control">Your control</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+      <section id="why">
+        <h2><span class="num">01</span>Why AutoReview needs Accessibility Service</h2>
+        <p>Android's Accessibility Service API is the <strong>only</strong> system-level API that lets an app read the content of another app's screen and act on it — the same capability that powers screen readers and switch-access tools. AutoReview uses it to detect a question on screen and tap the answer you've already told it to give.</p>
+
+        <div class="settings-mock">
+          <div class="settings-row">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,9V7c0,-1.1 -0.9,-2 -2,-2h-3c0,-1.66 -1.34,-3 -3,-3S9,3.34 9,5H6C4.9,5 4,5.9 4,7v2c-1.66,0 -3,1.34 -3,3v4c0,1.66 1.34,3 3,3v4c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2v-4c1.66,0 3,-1.34 3,-3v-4C23,10.34 21.66,9 20,9zM7.5,11.5C7.5,10.67 8.17,10 9,10s1.5,0.67 1.5,1.5S9.83,13 9,13S7.5,12.33 7.5,11.5zM16.5,11.5c0,-0.83 -0.67,-1.5 -1.5,-1.5s-1.5,0.67 -1.5,1.5s0.67,1.5 1.5,1.5S16.5,12.33 16.5,11.5zM16,17H8v-2h8V17z"/>
+              </svg>
+            </div>
+            <div class="label">
+              <div class="name">AutoReview</div>
+              <div class="desc">Accessibility Service · currently on</div>
+            </div>
+            <div class="toggle"></div>
+          </div>
+          <div class="divider"></div>
+          <p class="settings-note">This is the exact toggle you control in Settings → Accessibility → AutoReview. Turning it off stops all screen-reading and tapping immediately.</p>
+        </div>
+
+        <p>Without this permission, AutoReview would need you to manually answer every single question every time — defeating the entire purpose of the app.</p>
+      </section>
+
+      <section id="what-it-does">
+        <h2><span class="num">02</span>What the service actually does</h2>
+        <ul>
+          <li>Watches for screen content changes only while the service is enabled and only within the app you're using it against.</li>
+          <li>Matches visible question text against the presets you've defined yourself.</li>
+          <li>Taps the star rating or Yes/No answer that corresponds to a matched question.</li>
+          <li>Surfaces any question it doesn't recognize in an "Unrecognized Question" screen so you can map it once, manually.</li>
+        </ul>
+        <p>AutoReview does <strong>not</strong> record your screen, take screenshots, log keystrokes outside of matching your saved presets, or read/interact with any app other than the one you've pointed it at.</p>
+      </section>
+
+      <section id="data">
+        <h2><span class="num">03</span>What data is collected and stored</h2>
+        <p>Your question presets — the questions you define and the answers you assign to them — are stored <strong>locally on your device only</strong>, using Android DataStore with a Protobuf-backed schema.</p>
+        <p>Unrecognized question text is held only long enough for you to map it inside the app, then saved locally alongside your other presets. It is never transmitted anywhere.</p>
+
+        <div class="callout">
+          <div class="dot"></div>
+          <p><strong>No backend.</strong> AutoReview has no server, no analytics SDK, and no third-party data collection built in. There is nowhere for your data to go.</p>
+        </div>
+      </section>
+
+      <section id="permissions">
+        <h2><span class="num">04</span>Permissions summary</h2>
+        <table class="perm-table">
+          <thead>
+            <tr><th>Permission</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Accessibility Service</td>
+              <td>Read on-screen question text and tap the matching answer based on your saved presets.</td>
+            </tr>
+            <tr>
+              <td>Storage (DataStore, internal)</td>
+              <td>Save your question and answer presets locally on your device.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sharing">
+        <h2><span class="num">05</span>Data sharing</h2>
+        <p>AutoReview does not share, sell, or transmit any data to third parties — because no data leaves your device in the first place.</p>
+      </section>
+
+      <section id="control">
+        <h2><span class="num">06</span>Your control</h2>
+        <p>You can disable the Accessibility Service for AutoReview at any time via <strong>Settings → Accessibility → AutoReview</strong>. Doing so immediately stops all screen-reading and auto-tap behavior. Uninstalling the app removes all locally stored presets along with it.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="num">07</span>Changes to this policy</h2>
+        <p>If this policy changes, the updated version will be posted at this same URL with a revised "Last updated" date above.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="num">08</span>Contact</h2>
+        <p>Questions about this policy or the app's behavior can be sent to <strong>your-email@example.com</strong> or via GitHub <strong>@ashanokoji</strong>.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <span>AutoReview — Privacy Policy</span>
+    <span><a href="https://github.com/ashanokoji" target="_blank" rel="noopener">github.com/ashanokoji</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
