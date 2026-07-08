@@ -412,8 +412,8 @@
     <p class="lede">AutoReview automates repetitive on-screen questions — star ratings, Yes/No prompts — using Android's Accessibility Service. This page explains exactly why that permission is needed, what the service does, and what happens (and doesn't happen) to your data.</p>
     <div class="meta-row">
       <span class="pill">Last updated · July 2026</span>
-      <span class="pill ok">● No data leaves your device</span>
-      <span class="pill">v1.0</span>
+      <span class="pill ok">● Core service runs fully on-device</span>
+      <span class="pill">v1.1</span>
     </div>
   </header>
 
@@ -424,6 +424,7 @@
       <a href="#data">Data collected</a>
       <a href="#permissions">Permissions</a>
       <a href="#sharing">Data sharing</a>
+      <a href="#ads">Advertising</a>
       <a href="#control">Your control</a>
       <a href="#changes">Changes</a>
       <a href="#contact">Contact</a>
@@ -473,7 +474,7 @@
 
         <div class="callout">
           <div class="dot"></div>
-          <p><strong>No backend.</strong> AutoReview has no server, no analytics SDK, and no third-party data collection built in. There is nowhere for your data to go.</p>
+          <p><strong>No backend for core functionality.</strong> AutoReview has no server of its own — your presets and question mappings are never transmitted anywhere. The only outside data flow in the app is the advertising SDK described below.</p>
         </div>
       </section>
 
@@ -492,6 +493,10 @@
               <td>Storage (DataStore, internal)</td>
               <td>Save your question and answer presets locally on your device.</td>
             </tr>
+            <tr>
+              <td>Internet / Network</td>
+              <td>Required by Unity LevelPlay to request and display ads. Not used by any other part of the app.</td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -501,18 +506,40 @@
         <p>AutoReview does not share, sell, or transmit any data to third parties — because no data leaves your device in the first place.</p>
       </section>
 
+      <section id="ads">
+        <h2><span class="num">06</span>Advertising</h2>
+        <p>AutoReview shows ads through <strong>Unity LevelPlay</strong>, a mediation platform that runs an auction across multiple ad networks (including Unity Ads and, where connected, partners such as AdMob or Meta Audience Network) to serve each ad. This is separate from the on-device automation described above and is the only component of the app that communicates with an external service.</p>
+        <p>To serve and measure ads, LevelPlay and its connected ad networks may collect information such as device identifiers, approximate location (derived from IP), app usage and ad interaction data, in line with standard mobile advertising practices. This data is collected and processed by Unity and its mediated ad networks directly — it does not pass through AutoReview's own storage and is unrelated to your question presets.</p>
+        <div class="settings-mock">
+          <div class="settings-row">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10s10,-4.48 10,-10S17.52,2 12,2zM13,17h-2v-2h2v2zM13,13h-2V7h2v6z"/>
+              </svg>
+            </div>
+            <div class="label">
+              <div class="name">Unity LevelPlay</div>
+              <div class="desc">Ad mediation · governed by Unity's privacy policy</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <p class="settings-note">Full details on what Unity and its mediated networks collect: <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener" style="color:var(--accent);">unity.com/legal/privacy-policy</a></p>
+        </div>
+        <p>We recommend reviewing Unity's privacy policy directly, since LevelPlay's mediated networks and their individual data practices can change independently of this app.</p>
+      </section>
+
       <section id="control">
-        <h2><span class="num">06</span>Your control</h2>
+        <h2><span class="num">07</span>Your control</h2>
         <p>You can disable the Accessibility Service for AutoReview at any time via <strong>Settings → Accessibility → AutoReview</strong>. Doing so immediately stops all screen-reading and auto-tap behavior. Uninstalling the app removes all locally stored presets along with it.</p>
       </section>
 
       <section id="changes">
-        <h2><span class="num">07</span>Changes to this policy</h2>
+        <h2><span class="num">08</span>Changes to this policy</h2>
         <p>If this policy changes, the updated version will be posted at this same URL with a revised "Last updated" date above.</p>
       </section>
 
       <section id="contact">
-        <h2><span class="num">08</span>Contact</h2>
+        <h2><span class="num">09</span>Contact</h2>
         <p>Questions about this policy or the app's behavior can be sent via GitHub <strong>@nawfumi</strong>.</p>
       </section>
 
